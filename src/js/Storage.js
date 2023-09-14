@@ -70,6 +70,7 @@ export default class Storage {
       // ? Create New Category
       categoryToSave.id = new Date().getTime();
       categoryToSave.createdAt = new Date().toISOString();
+      
       //? push category to categories
       savedCategories.push(categoryToSave);
     }

@@ -10,66 +10,78 @@
 
 <body>
   <div class="bg-slate-800 pb-8">
-    <!-- appbar -->
+
+    <!--! appbar -->
     <div class="h-12 flex items-center justify-center gap-x-4 bg-blue-900 mb-8">
       <h1 class="text-xl font-bold text-slate-300">Inventory App using tailwind & js</h1>
       <span
         class="flex item-center justify-center w-7 h-7 rounded-full bg-slate-500 text-slate-100 border-2 border-slate-300">7</span>
     </div>
-    <!-- app content -->
+
+
+    <!--! app content -->
     <div class="container max-w-screen-sm mx-auto">
 
-      <!-- category form -->
+
+      <!--! category form -->
       <div class="mb-10">
-        <h2 class="text-xl text-slate-300 font-bold mb-2">Add New Category !</h2>
-        <form class="bg-slate-700 p-4 rounded-xl flex flex-col gap-y-4">
-          <div>
-            <label for="category-title" class="block mb-1 text-slate-400">Title</label>
-            <input type="text" name="category-title" id="category-title"
-              class="bg-transparent rounded-xl border border-slate-500 text-slate-400">
-          </div>
-          <div>
-            <label for="product-quantity" class="block mb-1 text-slate-400">Description</label>
-            <textarea type="text" name="category-description" id="category-description"
-              class="bg-transparent rounded-xl border border-slate-500 text-slate-400 w-full"></textarea>
-          </div>
-          <div class="flex items-center justify-between gap-x-4">
-            <button class="flex-1 border border-slate-400 text-slate-300 rounded-xl py-2">Cancel</button>
-            <button class="flex-1 bg-slate-500 text-slate-200 rounded-xl py-2">Add New Category</button>
-          </div>
-        </form>
+        <h2 class="text-xl text-slate-300 font-bold mb-2">Add New Category !<h2>
+            <form class="bg-slate-700 p-4 rounded-xl flex flex-col gap-y-4">
+              <div>
+                <label for="category-title" class="block mb-1 text-slate-400">Title</label>
+                <input type="text" name="category-title" id="category-title"
+                  class="bg-transparent rounded-xl border border-slate-500 text-slate-400">
+              </div>
+
+              <div>
+                <label for="product-quantity" class="block mb-1 text-slate-400">Description</label>
+                <textarea type="text" name="category-description" id="category-description"
+                  class="bg-transparent rounded-xl border border-slate-500 text-slate-400 w-full"></textarea>
+              </div>
+
+              <div class="flex items-center justify-between gap-x-4">
+                <button class="flex-1 border border-slate-400 text-slate-300 rounded-xl py-2"
+                  id="cancel-category-btn">Cancel</button>
+                <button class="flex-1 bg-slate-500 text-slate-200 rounded-xl py-2" id="add-new-category">Add New
+                  Category</button>
+              </div>
+            </form>
       </div>
 
-      <!-- product form -->
+
+      <!--! product form -->
       <div class="mb-8">
         <h2 class="text-xl text-slate-300 font-bold mb-2">Add New Product !</h2>
         <form class="bg-slate-700 p-4 rounded-xl flex flex-col gap-y-4">
+
           <div>
             <label for="product-title" class="block mb-1 text-slate-400">product Title</label>
             <input type="text" name="product-title" id="product-title"
               class="bg-transparent rounded-xl border border-slate-500 text-slate-400">
           </div>
+
           <div>
             <label for="product-quantity" class="block mb-1 text-slate-400">Quantity</label>
             <input type="number" name="product-quantity" id="product-quantity"
               class="bg-transparent rounded-xl border border-slate-500 text-slate-400"></input>
           </div>
+
           <div>
             <label for="product-quantity" class="block mb-1 text-slate-400">Category</label>
-            <select type="number" name="product-quantity" id="product-quantity"
+            <select type="number" name="product-quantity" id="product-category"
               class="bg-transparent rounded-xl border border-slate-500 text-slate-400 w-full">
-              <option class="bg-slate-500 text-slate-200" value="beauty-product">beauty product</option>
-              <option class="bg-slate-500 text-slate-200" value="electronic-devices">electronic devices</option>
-              <option class="bg-slate-500 text-slate-200" value="sport-equipment">sport equipment</option>
             </select>
           </div>
+
           <div class="">
             <button class="bg-slate-500 text-slate-200 rounded-xl py-2 w-full">Add New Product</button>
           </div>
+
         </form>
       </div>
 
-      <!-- product list -->
+
+      <!--! product list -->
       <h2 class="text-xl text-slate-300 font-bold mb-2">Product List</h2>
       <div class="flex items-center justify-between mb-8">
         <span class="text-slate-300">pen</span>
