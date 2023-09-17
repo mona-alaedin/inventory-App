@@ -6,10 +6,14 @@ const productTitle = document.querySelector("#product-title");
 const productQuantity = document.querySelector("#product-quantity");
 const selectedCategory = document.querySelector("#product-category");
 const addNewProductBtn = document.querySelector("#add-new-product");
+const searchInput = document.querySelector("#search-input");
+
 class ProductView {
   constructor() {
     addNewProductBtn.addEventListener("click", (e) => this.addNewProduct(e));
+    searchInput.addEventListener("input", (e) => this.searchProducts(e));
     this.products = [];
+    this.searchProductResult = [];
   }
 
   addNewProduct(e) {
@@ -23,13 +27,13 @@ class ProductView {
     Storage.saveProducts({ title, quantity, category });
 
     this.products = Storage.getAllProducts();
-    this.createProductList();
+    this.createProductList(this.products);
   }
 
-  createProductList() {
+  createProductList(products) {
     let result = "";
 
-    this.products.forEach((item) => {
+    products.forEach((item) => {
       const findSelectedCategory = Storage.getAllCategories().find(
         (c) => c.id == item.category
       );
@@ -55,6 +59,15 @@ class ProductView {
 
     const productsList = document.getElementById("product-list");
     productsList.innerHTML = result;
+  }
+
+  searchProducts(e) {
+    const value = e.target.value.trim().toLowerCase();
+    const filteredProducts = this.products.filter((p) => {
+      return p.title.toLowerCase().includes(value);
+    });
+    this.searchProductResult = filteredProducts;
+    this.createProductList(this.searchProductResult);
   }
 
   setApp() {

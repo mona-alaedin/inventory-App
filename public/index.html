@@ -74,7 +74,8 @@
           </div>
 
           <div class="">
-            <button class="bg-slate-500 text-slate-200 rounded-xl py-2 w-full" id="add-new-product">Add New Product</button>
+            <button class="bg-slate-500 text-slate-200 rounded-xl py-2 w-full" id="add-new-product">Add New
+              Product</button>
           </div>
 
         </form>
@@ -82,7 +83,15 @@
 
 
       <!--! product list -->
-      <h2 class="text-xl text-slate-300 font-bold mb-2">Product List</h2>
+      <h2 class="text-xl text-slate-300 font-bold mb-10">Product List</h2>
+
+      <!-- ! search product -->
+      <div class="flex items-center justify-between mb-10">
+        <label for="search-input" class="text-slate-400 text-xl">search</label>
+        <input type="text" name="search-input" id="search-input"
+          class="bg-transparent rounded-xl border border-slate-500 text-slate-400">
+      </div>
+
       <div id="product-list"></div>
     </div>
   </div>
