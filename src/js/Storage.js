@@ -70,7 +70,7 @@ export default class Storage {
       // ? Create New Category
       categoryToSave.id = new Date().getTime();
       categoryToSave.createdAt = new Date().toISOString();
-      
+
       //? push category to categories
       savedCategories.push(categoryToSave);
     }
@@ -90,9 +90,7 @@ export default class Storage {
   static saveProducts(productToSave) {
     const savedProducts = Storage.getAllProducts();
 
-    const existedProduct = savedProducts.find((p) => {
-      return p.id === productToSave.id;
-    });
+    const existedProduct = savedProducts.find((p) => p.id === productToSave.id);
 
     if (existedProduct) {
       // ? Edite product
@@ -106,6 +104,6 @@ export default class Storage {
       savedProducts.push(productToSave);
     }
 
-    localStorage.setItem("product", JSON.stringify(savedProducts));
+    localStorage.setItem("products", JSON.stringify(savedProducts));
   }
 }
