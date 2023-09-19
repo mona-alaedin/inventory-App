@@ -54,10 +54,9 @@ class ProductView {
           <span class="flex item-center justify-center w-7 h-7 rounded-full bg-slate-500 text-slate-100 border-2 border-slate-300">
             ${item.quantity}
           </span>
-          <button class="px-2 py-0.5 rounded-2xl border border-red-400 text-red-400" data-id=${
+          <button class="px-2 py-0.5 rounded-2xl border border-red-400 text-red-400" id="delete-product" data-id=${
             item.id
-          }>
-          delete
+          }>delete
           </button>
         </div>
         </div>`;
@@ -65,6 +64,12 @@ class ProductView {
 
     const productsList = document.getElementById("product-list");
     productsList.innerHTML = result;
+
+    const deleteProductBtns = [...document.querySelectorAll("#delete-product")];
+
+    deleteProductBtns.forEach((btn) => {
+      btn.addEventListener("click", (e) => this.deleteProduct(e));
+    });
   }
 
   searchProducts(e) {
@@ -79,6 +84,14 @@ class ProductView {
   sortProducts(e) {
     const selectedValue = e.target.value;
     this.products = Storage.getAllProducts(selectedValue);
+    this.createProductList(this.products);
+  }
+
+  deleteProduct(e) {
+    const dataID = e.target.dataset.id;
+
+    Storage.deleteProduct(parseInt(dataID));
+    this.setApp();
     this.createProductList(this.products);
   }
 
