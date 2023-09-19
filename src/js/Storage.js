@@ -1,48 +1,3 @@
-const category = [
-  {
-    id: 1,
-    title: "beauty product",
-    description: "this category is beauty product",
-    createdAt: "2023-09-11T03:03:06.421Z",
-  },
-  {
-    id: 2,
-    title: "electronic devices",
-    description: "this category is electronic devices",
-    createdAt: "2023-01-11T03:03:06.421Z",
-  },
-  {
-    id: 3,
-    title: "sport equipment",
-    description: "this category is sport equipment",
-    createdAt: "2023-04-11T03:05:06.421Z",
-  },
-];
-
-const products = [
-  {
-    id: 1,
-    title: "product-1",
-    quantity: 2,
-    category: "beauty product",
-    createdAt: "2023-09-11T03:03:06.421Z",
-  },
-  {
-    id: 2,
-    title: "product-2",
-    quantity: 1,
-    category: "beauty product",
-    createdAt: "2022-09-11T03:03:06.421Z",
-  },
-  {
-    id: 3,
-    title: "product-3",
-    quantity: 4,
-    category: "beauty product",
-    createdAt: "2023-04-11T03:03:06.421Z",
-  },
-];
-
 export default class Storage {
   static getAllCategories() {
     const savedCategories = JSON.parse(localStorage.getItem("category")) || [];
@@ -77,11 +32,17 @@ export default class Storage {
     localStorage.setItem("category", JSON.stringify(savedCategories));
   }
 
-  static getAllProducts() {
+  static getAllProducts(sort = "newest") {
     const savedProducts = JSON.parse(localStorage.getItem("products")) || [];
 
     const sortedProducts = savedProducts.sort((a, b) => {
-      return new Date(a.createdAt) < new Date(b.createdAt) ? -1 : 1;
+      if (sort === "newest") {
+        // ! DESCENDING SORT PRODUCTS
+        return new Date(a.createdAt) > new Date(b.createdAt) ? -1 : 1;
+      } else if (sort === "oldest") {
+        // ! ASCENDING SORT PRODUCTS
+        return new Date(a.createdAt) > new Date(b.createdAt) ? 1 : -1;
+      }
     });
 
     return sortedProducts;

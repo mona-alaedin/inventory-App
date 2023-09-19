@@ -24,30 +24,32 @@
 
 
       <!--! category form -->
-      <div class="mb-10">
-        <h2 class="text-xl text-slate-300 font-bold mb-2">Add New Category !<h2>
-            <form class="bg-slate-700 p-4 rounded-xl flex flex-col gap-y-4">
-              <div>
-                <label for="category-title" class="block mb-1 text-slate-400">Title</label>
-                <input type="text" name="category-title" id="category-title"
-                  class="bg-transparent rounded-xl border border-slate-500 text-slate-400">
-              </div>
+      <section>
+        <div class="mb-10 hidden" id='category-wrapper'>
+          <h2 class="text-xl text-slate-300 font-bold mb-2">Add New Category !<h2>
+              <form class="bg-slate-700 p-4 rounded-xl flex flex-col gap-y-4">
+                <div>
+                  <label for="category-title" class="block mb-1 text-slate-400">Title</label>
+                  <input type="text" name="category-title" id="category-title"
+                    class="bg-transparent rounded-xl border border-slate-500 text-slate-400">
+                </div>
 
-              <div>
-                <label for="product-quantity" class="block mb-1 text-slate-400">Description</label>
-                <textarea type="text" name="category-description" id="category-description"
-                  class="bg-transparent rounded-xl border border-slate-500 text-slate-400 w-full"></textarea>
-              </div>
+                <div>
+                  <label for="product-quantity" class="block mb-1 text-slate-400">Description</label>
+                  <textarea type="text" name="category-description" id="category-description"
+                    class="bg-transparent rounded-xl border border-slate-500 text-slate-400 w-full"></textarea>
+                </div>
 
-              <div class="flex items-center justify-between gap-x-4">
-                <button class="flex-1 border border-slate-400 text-slate-300 rounded-xl py-2"
-                  id="cancel-category-btn">Cancel</button>
-                <button class="flex-1 bg-slate-500 text-slate-200 rounded-xl py-2" id="add-new-category">Add New
-                  Category</button>
-              </div>
-            </form>
-      </div>
-
+                <div class="flex items-center justify-between gap-x-4">
+                  <button class="flex-1 border border-slate-400 text-slate-300 rounded-xl py-2"
+                    id="cancel-add-btn">Cancel</button>
+                  <button class="flex-1 bg-slate-500 text-slate-200 rounded-xl py-2" id="add-new-category">Add New
+                    Category</button>
+                </div>
+              </form>
+        </div>
+        <button id="toggle-add-category" class="text-orange-500 font-medium text-lg mb-8">Add New Category !</button>
+      </section>
 
       <!--! product form -->
       <div class="mb-8">
@@ -73,9 +75,10 @@
             </select>
           </div>
 
-          <div class="">
-            <button class="bg-slate-500 text-slate-200 rounded-xl py-2 w-full" id="add-new-product">Add New
-              Product</button>
+          <div>
+            <button class="bg-slate-500 text-slate-200 rounded-xl py-2 w-full" id="add-new-product">
+              Add New Product
+            </button>
           </div>
 
         </form>
@@ -87,10 +90,26 @@
 
       <!-- ! search product -->
       <div class="flex items-center justify-between mb-10">
-        <label for="search-input" class="text-slate-400 text-xl">search</label>
+        <label for="search-input" class="text-slate-400 text-l">search</label>
         <input type="text" name="search-input" id="search-input"
           class="bg-transparent rounded-xl border border-slate-500 text-slate-400">
       </div>
+
+      <!--! sort product -->
+      <div class="flex items-center justify-between mb-10">
+        <label for="sort-products" class="text-slate-400 text-l">Sort</label>
+        <select name="sort-products" id="sort-products"
+          class="bg-transparent rounded-xl border border-slate-500 text-slate-400">
+          <option class="bg-slate-500 text-slate-200" value="" selected>Select a category</option>
+          <option class="bg-slate-500 text-slate-200" value="newest">
+            Newest
+          </option>
+          <option class="bg-slate-500 text-slate-200" value="oldest">
+            oldest
+          </option>
+        </select>
+      </div>
+
 
       <div id="product-list"></div>
     </div>
