@@ -8,6 +8,7 @@ const selectedCategory = document.querySelector("#product-category");
 const addNewProductBtn = document.querySelector("#add-new-product");
 const searchInput = document.querySelector("#search-input");
 const selectedSort = document.querySelector("#sort-products");
+const productLength = document.querySelector("#product-length");
 
 class ProductView {
   constructor() {
@@ -33,6 +34,7 @@ class ProductView {
     productTitle.value = "";
     productQuantity.value = "";
     selectedCategory.value = "";
+    productLength.innerHTML = this.products.length;
   }
 
   createProductList(products) {
@@ -97,6 +99,7 @@ class ProductView {
 
   setApp() {
     this.products = Storage.getAllProducts();
+    productLength.innerHTML = this.products.length;
   }
 }
 
