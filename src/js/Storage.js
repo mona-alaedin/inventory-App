@@ -54,7 +54,7 @@ export default class Storage {
     const existedProduct = savedProducts.find((p) => p.id === productToSave.id);
 
     if (existedProduct) {
-      // ? Edite product
+      // ? Edit product
       existedProduct.title = productToSave.title;
       existedProduct.quantity = productToSave.quantity;
       existedProduct.category = productToSave.category;
@@ -73,4 +73,5 @@ export default class Storage {
     const filteredProducts = savedProducts.filter((p) => p.id !== productID);
     localStorage.setItem("products", JSON.stringify(filteredProducts));
   }
+
 }

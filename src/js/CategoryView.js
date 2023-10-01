@@ -49,7 +49,9 @@ class CategoryView {
     });
 
     const selectOption = document.querySelector("#product-category");
+    const EditSelectOption = document.querySelector("#edit-product-category");
     selectOption.innerHTML = result;
+    EditSelectOption.innerHTML = result;
   }
 
   toggleAddCategory(e) {

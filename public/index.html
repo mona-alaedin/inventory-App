@@ -9,7 +9,61 @@
 </head>
 
 <body>
-  <div class="bg-slate-800 pb-8">
+
+  <div class="bg-slate-800 pb-8 relative">
+
+    <!--Overlay Effect-->
+    <div class="absolute hidden top-0 left-0 bg-gray-600 bg-opacity-50 overflow-y-auto h-full w-full" id="backdrop">
+    </div>
+
+    <!-- !modal content-->
+    <div
+      class="hidden top-1/2 left-1/2 absolute transform -translate-x-1/2 p-5 border w-96 shadow-lg rounded-md bg-slate-100"
+      id="modal-content">
+
+      <h2 class="text-2xl text-slate-950 font-bold mb-8 text-center">Edit Product Detail</h2>
+      <form class="flex flex-col gap-y-4">
+
+        <div>
+          <label for="edit-product-title" class="block mb-1 text-slate-400">Product Title</label>
+          <input type="text" name="edit-product-title" id="edit-product-title"
+            class="w-full bg-white rounded-xl border border-slate-500 text-slate-400">
+        </div>
+
+
+        <div class="flex justify-between items-center">
+
+          <div>
+            <label for="edit-product-quantity" class="block mb-1 text-slate-400">Quantity</label>
+            <input type="number" name="edit-product-quantity" id="edit-product-quantity"
+              class="bg-white rounded-xl border border-slate-500 text-slate-400 w-40"></input>
+          </div>
+
+          <div>
+            <label for="edit-product-category" class="block mb-1 text-slate-400">Category</label>
+            <select type="number" name="edit-product-category" id="edit-product-category"
+              class="bg-white rounded-xl border border-slate-500 text-slate-400 w-40">
+            </select>
+          </div>
+        </div>
+
+        <div class="flex justify-between items-center">
+
+          <button class="bg-slate-200 text-black border-1 border-slate-700 text-slate-200 rounded-xl py-2 w-40"
+            id="cancel-edit-product">
+            Cancel
+          </button>
+
+          <button class="bg-slate-500 text-slate-100 rounded-xl py-2 w-40" id="edit-product-btn">
+            Edit Product
+          </button>
+
+        </div>
+
+      </form>
+    </div>
+
+
 
     <!--! appbar -->
     <div class="h-12 flex items-center justify-center gap-x-4 bg-blue-900 mb-8">
@@ -114,8 +168,9 @@
         </select>
       </div>
 
+      <div id="product-list">
 
-      <div id="product-list"></div>
+      </div>
     </div>
   </div>
 
