@@ -41,8 +41,7 @@ class CategoryView {
   }
 
   createCategoriesList() {
-    let result = `<option class="bg-slate-500 text-slate-200" value="" >Select a category</option>`;
-
+    let result = "";
     this.categories.forEach((c) => {
       result += `<option class="bg-slate-500 text-slate-200" value=${c.id}>
       ${c.title}</option>`;

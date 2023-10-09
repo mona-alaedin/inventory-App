@@ -53,23 +53,23 @@ class ProductView {
       const findSelectedCategory = Storage.getAllCategories().find(
         (c) => c.id == item.category
       );
-      result += `<div class="flex items-center justify-between mb-8">
-        <span class="text-slate-300">${item.title}</span>
-        <div class="flex items-center gap-x-3">
+      result += `<div class="flex flex-wrap items-center justify-between mb-8 border border-1 border-slate-400 p-6 rounded-xl mx-2 sm:mx-0">
+        <span class="text-slate-100">${item.title}</span>
+        <div class="flex flex-wrap items-center justify-between gap-x-6 gap-y-4">
           <span class="text-slate-400">
           ${new Date(item.createdAt).toLocaleDateString("fa-IR")}
           </span>
-          <span class="block w-28 py-1 px-2 border border-slate-500 text-slate-300 rounded-xl text-center">
+          <span class="block w-36 py-1 px-2 border border-indigo-400 text-white rounded-xl text-center">
           ${findSelectedCategory.title}
           </span>
-          <span class="flex item-center justify-center w-7 h-7 rounded-full bg-slate-500 text-slate-100 border-2 border-slate-300">
+          <span class="flex item-center justify-center w-8 h-8 rounded-full bg-cyan-700 text-sky-50 text-lg border-2 border-sky-50">
             ${item.quantity}
           </span>
-          <button class="px-2 py-0.5 rounded-xl border border-red-400 text-red-400" id="delete-product" data-id=${
+          <button class="px-2 py-0.5 rounded-xl border border-rose-300 text-rose-700 bg-rose-100" id="delete-product" data-id=${
             item.id
           }>delete
           </button>
-          <button class="px-4 py-0.5 rounded-xl border border-slate-600 text-orange-500" id="edit-product" data-id=${
+          <button class="px-4 py-0.5 rounded-xl border border-sky-50 bg-cyan-700 text-white" id="edit-product" data-id=${
             item.id
           }>Edit
           </button>
